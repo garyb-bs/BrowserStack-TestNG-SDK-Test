@@ -13,12 +13,9 @@ steps:
 
 - task: JavaToolInstaller@0
   inputs:
-    versionSpec: "17"
-    jdkArchitectureOption: x64
-    jdkSourceOption: LocalDirectory
-    jdkFile: "/builds/openjdk-11.0.2_linux-x64_bin.tar.gz"
-    jdkDestinationDirectory: "/builds/binaries/externals"
-    cleanDestinationDirectory: true
+    versionSpec: '17'
+    jdkArchitectureOption: 'x86'
+    jdkSourceOption: 'PreInstalled'
 
 - task: BrowserStackConfig@0
   inputs:
