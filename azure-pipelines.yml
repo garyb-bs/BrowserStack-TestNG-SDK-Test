@@ -10,6 +10,19 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: "17"
+    jdkArchitectureOption: x64
+    jdkSourceOption: LocalDirectory
+    jdkFile: "/builds/openjdk-11.0.2_linux-x64_bin.tar.gz"
+    jdkDestinationDirectory: "/builds/binaries/externals"
+    cleanDestinationDirectory: true
+
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'BS_Demo_Creds'
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -21,15 +34,6 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'test -P sample-test'
 
-- task: BrowserStackConfig@0
+- task: BrowserStackResults@1
   inputs:
-    BrowserStackServiceEndPoint: 'BS_Demo_Creds'
-
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: "17"
-    jdkArchitectureOption: x64
-    jdkSourceOption: LocalDirectory
-    jdkFile: "/builds/openjdk-11.0.2_linux-x64_bin.tar.gz"
-    jdkDestinationDirectory: "/builds/binaries/externals"
-    cleanDestinationDirectory: true
+    browserstackProduct: 'automate'
