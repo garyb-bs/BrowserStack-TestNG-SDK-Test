@@ -24,7 +24,6 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'test -P sample-test'
-
 - task: BrowserStackResults@1
   inputs:
     browserstackProduct: 'automate'
