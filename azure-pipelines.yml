@@ -11,6 +11,9 @@ pool:
 
 steps:
 - task: Maven@4
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'BS_Demo_Creds'
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
