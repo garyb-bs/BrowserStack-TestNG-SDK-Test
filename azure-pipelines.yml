@@ -23,7 +23,7 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'test -P sample-test'
+    goals: 'test -X -P sample-test'
 - task: BrowserStackResults@1
   inputs:
     browserstackProduct: 'automate'
