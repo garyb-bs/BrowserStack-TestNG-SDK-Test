@@ -43,6 +43,8 @@ public class BaseTest {
 
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws Exception {
+        System.out.println("The username is: " + System.getenv("BROWSERSTACK_USERNAME"));
+        System.out.println("The access key is: " + System.getenv("BROWSERSTACK_ACCESS_KEY"));
         DesiredCapabilities capabilities = new DesiredCapabilities();
         driver = new RemoteWebDriver(
                 new URL("https://hub.browserstack.com/wd/hub"), capabilities);
