@@ -9,10 +9,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
- - name: BROWSERSTACK_BUILD_NAME
-   value: Test Build
-
 steps:
 
 - task: BrowserStackConfig@0
