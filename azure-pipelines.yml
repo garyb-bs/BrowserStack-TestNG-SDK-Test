@@ -9,11 +9,16 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- name: BROWSERSTACK_BUILD_NAME
+  value: "test-001"
+
 steps:
 
 - task: BrowserStackConfig@0
   inputs:
     BrowserStackServiceEndPoint: 'BS_Demo_Creds'
+
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
