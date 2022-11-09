@@ -3,8 +3,8 @@
 # =============================
 # Add your BrowserStack userName and acccessKey here or set BROWSERSTACK_USERNAME and
 # BROWSERSTACK_ACCESS_KEY as env variables
-userName: garyb_bE4JkU
-accessKey: pdssmsj9TXxUef71xdej
+userName: BROWWSERSTACK_USERNAME
+accessKey: BROWSERSTACK_ACCESS_KEY
 
 # ======================
 # Organizing your tests
@@ -16,7 +16,7 @@ accessKey: pdssmsj9TXxUef71xdej
 # Ensure you add a dynamic identifier, like an incremental build number from your
 # CI/CD or timestamp at the end of every build; otherwise tests from different
 # executions will be grouped together on BrowserStack
-buildName: java-testng-build-3
+buildName: BROWSERSTACK_BUILD_NAME
 # Use `projectName` to set the name of your project. Example, Marketing Website
 projectName: BrowserStack Samples
 # Use `framework` to set the framework of your project. Example, testng, cucumber, cucumber-testng
