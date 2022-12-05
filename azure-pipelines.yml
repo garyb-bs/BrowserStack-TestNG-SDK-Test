@@ -14,11 +14,6 @@ variables:
   value: "test-001"
 
 steps:
-
-- task: BrowserStackConfig@0
-  inputs:
-    BrowserStackServiceEndPoint: 'BS_Demo_Creds'
-
 - task: Maven@4
   inputs:
     mavenPomFile: 'pom.xml'
@@ -29,6 +24,9 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'test -X -P sample-test'
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'BS_Demo_Creds'
 - task: BrowserStackResults@1
   inputs:
     browserstackProduct: 'automate'
